@@ -30,18 +30,19 @@
 }
 
 .theme-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1001;
-    background: none;
+    background: rgba(255, 255, 255, 0.1);
     border: none;
     color: var(--secondary-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    transition: color 0.3s ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: 0.5rem;
 }
 
 [data-theme="dark"] .project-card,
@@ -54,6 +55,8 @@
 
 .theme-toggle:hover {
     color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 body {
@@ -64,33 +67,47 @@ body {
 }
 
 nav {
-    background-color: var(--primary-color);
-    padding: 1rem;
+    background-color: rgba(30, 41, 59, 0.8);
+    padding: 0.75rem;
     position: fixed;
-    width: 100%;
-    top: 0;
+    width: auto;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
-    backdrop-filter: blur(5px);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
     display: flex;
     justify-content: center;
+    align-items: center;
     list-style: none;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 nav a:hover {
     color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 .hero {
@@ -269,22 +286,29 @@ section {
 }
 
 .card-social-links {
-    display:flex;
+    display: flex;
+    justify-content: center;
     gap: 1.5rem;
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    align-items: center;
 }
 
 .card-social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     color: var(--primary-color);
     font-size: 1.4rem;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     text-decoration: none;
+    width: 40px;
+    height: 40px;
+}
+
+.card-social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
 }
 
 .card-social-links a span {
@@ -292,10 +316,7 @@ section {
     font-weight: 500;
 }
 
-.card-social-links a:hover {
-    color: var(--accent-color);
-    transform: translateY(-2px);
-}
+
 
 [data-theme="dark"] .card-social-links {
     border-top-color: rgba(255, 255, 255, 0.1);
@@ -385,12 +406,23 @@ section {
 }
 
 @media (max-width: 768px) {
+    nav {
+        top: auto;
+        bottom: 2rem;
+        right: 50%;
+        transform: translateX(50%);
+    }
+    
     .hero h1 {
         font-size: 2.5rem;
     }
     
     nav ul {
         gap: 1rem;
+    }
+
+    nav i {
+        font-size: 1.2rem;
     }
 
     section {
