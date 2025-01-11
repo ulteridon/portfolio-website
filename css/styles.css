@@ -5,6 +5,19 @@
     --bg-color: #F8F9FA;
     --text-color: #2D3748;
     --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    --dark-bg: #1A1B26;
+    --dark-text: #A9B1D6;
+    --dark-card-bg: #24283B;
+    --dark-primary: #BB9AF7;
+    --dark-secondary: #7AA2F7;
+}
+
+[data-theme="dark"] {
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+    --primary-color: var(--dark-primary);
+    --secondary-color: var(--dark-secondary);
 }
 
 * {
@@ -12,6 +25,33 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .skill-category,
+[data-theme="dark"] .contact {
+  background-color: var(--dark-card-bg);
+}
+
+
+
+.theme-toggle:hover {
+    color: var(--accent-color);
 }
 
 body {
