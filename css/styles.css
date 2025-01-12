@@ -127,10 +127,36 @@ nav a:hover {
 
 .role-title {
     font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    line-height: 1.2;
+    font-weight: 800;
+    background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:var(--dark-card-bg);
+    line-height: 1.3;
     margin-bottom: 2rem;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+}
+
+.role-title span {
+    display: block;
+    font-size: 0.9em;
+    position: relative;
+}
+
+.role-title span::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+}
+
+[data-theme="dark"] .role-title {
+    background: linear-gradient(120deg, var(--dark-primary), var(--dark-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .stats-grid {
