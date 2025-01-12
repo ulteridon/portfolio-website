@@ -28,3 +28,30 @@ document.querySelectorAll('nav a').forEach(anchor => {
         section.scrollIntoView({ behavior: 'smooth' });
     });
 });
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-stat');
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.5
+});
+
+// Observe all stat cards
+document.querySelectorAll('.stat-card').forEach(card => {
+    statsObserver.observe(card);
+});
+
+// Add hover effect to stat cards
+document.querySelectorAll('.stat-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+    });
+});

@@ -111,15 +111,68 @@ nav a:hover {
 }
 
 .hero {
-    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: center;
-    padding: 0 1rem;
-    background: var(--bg-color);
+    gap: 2rem;
 }
+
+.role-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+[data-theme="dark"] .stat-card {
+    background: var(--dark-card-bg);
+}
+
+[data-theme="dark"] .stat-label {
+    color: var(--dark-text);
+}
+
 
 .profile-img {
     width: 300px;
@@ -405,12 +458,26 @@ section {
     background-position: 0 88%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     nav {
         top: auto;
         bottom: 2rem;
         right: 50%;
         transform: translateX(50%);
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .role-title {
+        font-size: 2.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
     
     .hero h1 {
