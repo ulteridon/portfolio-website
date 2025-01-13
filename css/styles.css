@@ -375,6 +375,34 @@ section {
     padding: 0.5rem;
 }
 
+.language-logos {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border-top: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.lang-logo {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: grayscale(30%);
+}
+
+.lang-logo:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+[data-theme="dark"] .language-logos {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
 .metric-icon {
     font-size: 1.5rem;
     color: var(--secondary-color);
