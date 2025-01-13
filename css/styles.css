@@ -251,15 +251,41 @@ section {
 }
 
 .project-card {
-    background-color: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: visible;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
+.project-title {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #38BDF8, #6366F1);
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    z-index: 2;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.project-preview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.project-img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
 }
 
 .project-img {
@@ -275,6 +301,48 @@ section {
 .project-content h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
+}
+
+.tech-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.tech-logo:hover {
+    transform: scale(1.1);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.metric-icon {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.metric-label {
+    font-size: 0.8rem;
+    color: var(--text-color);
 }
 
 .tech-stack {
@@ -508,6 +576,33 @@ section {
     
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .store-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .store-button {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #38BDF8, #6366F1);
+        color: white;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .store-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    }
+    
+    .store-button i {
+        margin-right: 0.5rem;
     }
     
     nav ul {

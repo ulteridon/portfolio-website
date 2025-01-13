@@ -55,3 +55,40 @@ document.querySelectorAll('.stat-card').forEach(card => {
         card.style.transform = 'translateY(0)';
     });
 });
+
+const observeMetrics = () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const metrics = entry.target.querySelectorAll('.metric-value');
+                metrics.forEach(metric => {
+                    const target = parseInt(metric.getAttribute('data-value'));
+                    animateValue(metric, 0, target, 1500);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.metrics-grid').forEach(grid => {
+        observer.observe(grid);
+    });
+};
+
+// Animation function for counting up
+const animateValue = (obj, start, end, duration) => {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        obj.textContent = value.toLocaleString() + (obj.getAttribute('data-suffix') || '');
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+};
+
+// Initialize animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', observeMetrics);

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akash - Software Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 </head>
@@ -59,21 +60,45 @@
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
             <article class="project-card">
+                <h3 class="project-title">Cricinshots</h3>
                 <div class="project-preview">
                     <img src="images/cricinshots.png" alt="Cricinshots" class="project-img">
                 </div>
                 <div class="project-content">
-                    <h3>Cricinshots</h3>
                     <p>Led technical optimization achieving significant performance improvements. Reduced WebGL build size from 60MB to 24MB while improving FPS from 37 to 53.</p>
-                    <div class="tech-stack">
-                        <span>Unity</span>
-                        <span>WebGL</span>
-                        <span>Performance Optimization</span>
+                    
+                    <div class="tech-logos">
+                        <img src="images/unity-logo.jpg" alt="Unity" class="tech-logo">
+                        <img src="images/cocos-logo.png" alt="cocos" class="tech-logo">
                     </div>
-                    <div class="metrics">
-                        <p>Downloads: 50,000+</p>
-                        <p>Build Size Reduction: 60%</p>
-                        <p>FPS Improvement: 43%</p>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <i class="fas fa-download metric-icon"></i>
+                            <span class="metric-value" data-value="50000">50,000+</span>
+                            <span class="metric-label">Downloads</span>
+                        </div>
+                        <div class="metric-item">
+                            <i class="fas fa-compress-arrows-alt metric-icon"></i>
+                            <span class="metric-value" data-value="60" data-suffix="%">60%</span>
+                            <span class="metric-label">Size Reduction</span>
+                        </div>
+                        <div class="metric-item">
+                            <i class="fas fa-tachometer-alt metric-icon"></i>
+                            <span class="metric-value" data-value="43" data-suffix="%">43%</span>
+                            <span class="metric-label">FPS Boost</span>
+                        </div>
+                    </div>
+                    
+                    <div class="store-buttons">
+                        <a href="#" class="store-button">
+                            <i class="fab fa-google-play"></i>
+                            Play Store
+                        </a>
+                        <a href="#" class="store-button">
+                            <i class="fab fa-app-store"></i>
+                            App Store
+                        </a>
                     </div>
                 </div>
             </article>
