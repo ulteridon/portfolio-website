@@ -263,6 +263,14 @@ section {
     position: relative;
 }
 
+#liveops .projects-grid {
+    justify-content: center;
+}
+
+#liveops .project-card {
+    max-width: 400px;
+}
+
 .project-card {
     position: relative;
     background: rgba(255, 255, 255, 0.1);
